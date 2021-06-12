@@ -23,7 +23,7 @@ namespace diyetisyen_uygulamasi
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.Ace.OleDb.12.0;Data Source=db.accdb;");
             con.Open();
 
-            OleDbCommand cmd = new OleDbCommand("select ad,soyad,hastalik,diyet_tur,tcno,telno,email,adres from hastalar", con);
+            OleDbCommand cmd = new OleDbCommand("select ad,soyad,hastalik,diyet_tur,detay,tcno,telno,email,adres from hastalar", con);
             DataTable tablo1 = new DataTable();
             tablo1.Load(cmd.ExecuteReader());
             hastalar_tablosu.DataSource = tablo1;
@@ -64,26 +64,6 @@ namespace diyetisyen_uygulamasi
             con.Close();
         }
 
-        public void secili_hasta_getir()
-        {
-            if (hastalar.SelectedIndex != -1)
-            {
-                int secili_index = hastalar.SelectedIndex;
-                string hastalik, diyet;
-
-                hastalik = hastalar_tablosu[2, secili_index].Value.ToString();
-                diyet = hastalar_tablosu[3, secili_index].Value.ToString();
-
-                hastalar_tablosu.ClearSelection();
-                hastalar_tablosu.Rows[secili_index].Selected = true;
-                hastalar_tablosu.CurrentCell = hastalar_tablosu.Rows[secili_index].Cells[0];
-
-                hastaliklar.Text = hastalik;
-                diyetler.Text = diyet;
-            }
-            
-        }
-
         public void diyetler_doldur()
         {
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.Ace.OleDb.12.0;Data Source=db.accdb;");
@@ -98,6 +78,38 @@ namespace diyetisyen_uygulamasi
             }
 
             con.Close();
+        }
+
+        public void secili_hasta_getir()
+        {
+            if (hastalar.SelectedIndex != -1)
+            {
+                int secili_index = hastalar.SelectedIndex;
+                string hastalik, diyet, detay;
+
+                hastalik = hastalar_tablosu[2, secili_index].Value.ToString();
+                diyet = hastalar_tablosu[3, secili_index].Value.ToString();
+                detay = hastalar_tablosu[4, secili_index].Value.ToString();
+
+                hastalar_tablosu.ClearSelection();
+                hastalar_tablosu.Rows[secili_index].Selected = true;
+                hastalar_tablosu.CurrentCell = hastalar_tablosu.Rows[secili_index].Cells[0];
+
+                hastaliklar.Text = hastalik;
+                diyetler.Text = diyet;
+                hasta_detay.Text = detay;
+            }
+        }
+        
+        public void rapor_olustur()
+        {
+            string ad, soyad;
+
+            ad = hastalar_tablosu.CurrentRow.Cells[0].Value.ToString();
+            soyad = hastalar_tablosu.CurrentRow.Cells[1].Value.ToString();
+
+            rapor rapor = new rapor();
+            rapor.rapor_al(ad, soyad);
         }
 
         private void diyetisyen_panel_FormClosed(object sender, FormClosedEventArgs e)
@@ -168,13 +180,14 @@ namespace diyetisyen_uygulamasi
             }
             else
             {
-                string ad, soyad, hastalik, diyet;
+                string ad, soyad, hastalik, diyet, detay;
                 ad = hastalar_tablosu.CurrentRow.Cells[0].Value.ToString();
                 soyad = hastalar_tablosu.CurrentRow.Cells[1].Value.ToString();
                 hastalik = hastalar_tablosu.CurrentRow.Cells[2].Value.ToString();
-                diyet = hastalar_tablosu.CurrentRow.Cells[3].Value.ToString();                   
+                diyet = hastalar_tablosu.CurrentRow.Cells[3].Value.ToString();
+                detay = hastalar_tablosu.CurrentRow.Cells[4].Value.ToString();
 
-                if (hastaliklar.Text == hastalik && diyetler.Text == diyet) 
+                if (hastaliklar.Text == hastalik && diyetler.Text == diyet && hasta_detay.Text == detay) 
                 {
                     MessageBox.Show("Değişiklik Yapmalısınız!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -183,7 +196,7 @@ namespace diyetisyen_uygulamasi
                     OleDbConnection con = new OleDbConnection("Provider=Microsoft.Ace.OleDb.12.0;Data Source=db.accdb;");
                     con.Open();
 
-                    OleDbCommand cmd = new OleDbCommand("update hastalar set hastalik='" + hastaliklar.Text + "', diyet_tur='" + diyetler.Text + "' where ad='" + ad + "' and soyad='" + soyad + "'", con);
+                    OleDbCommand cmd = new OleDbCommand("update hastalar set hastalik='" + hastaliklar.Text + "', diyet_tur='" + diyetler.Text + "', detay='" + hasta_detay.Text + "' where ad='" + ad + "' and soyad='" + soyad + "'", con);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Güncelleme Gerçekleşti.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -192,8 +205,14 @@ namespace diyetisyen_uygulamasi
                 }
                 
             }
+
             hastalar_tablosu_doldur();
             secili_hasta_getir();
+        }
+
+        private void rapor_al_Click(object sender, EventArgs e)
+        {
+            rapor_olustur();
         }
     }
 }

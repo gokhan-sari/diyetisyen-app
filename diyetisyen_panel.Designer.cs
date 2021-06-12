@@ -29,10 +29,9 @@ namespace diyetisyen_uygulamasi
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.geri_butonu = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.hasta_ekle = new System.Windows.Forms.Button();
             this.adres = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
@@ -53,15 +52,19 @@ namespace diyetisyen_uygulamasi
             this.diyetler = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.guncelle = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.hasta_detay = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guncelle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hastalar_tablosu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,20 +79,10 @@ namespace diyetisyen_uygulamasi
             this.geri_butonu.UseVisualStyleBackColor = true;
             this.geri_butonu.Click += new System.EventHandler(this.geri_butonu_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(545, 180);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(175, 29);
-            this.label11.TabIndex = 83;
-            this.label11.Text = "Hasta Ekleme";
-            // 
             // hasta_ekle
             // 
             this.hasta_ekle.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.hasta_ekle.Location = new System.Drawing.Point(870, 174);
+            this.hasta_ekle.Location = new System.Drawing.Point(1070, 324);
             this.hasta_ekle.Name = "hasta_ekle";
             this.hasta_ekle.Size = new System.Drawing.Size(200, 50);
             this.hasta_ekle.TabIndex = 82;
@@ -100,7 +93,7 @@ namespace diyetisyen_uygulamasi
             // adres
             // 
             this.adres.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.adres.Location = new System.Drawing.Point(870, 74);
+            this.adres.Location = new System.Drawing.Point(1070, 232);
             this.adres.Name = "adres";
             this.adres.Size = new System.Drawing.Size(200, 40);
             this.adres.TabIndex = 80;
@@ -108,7 +101,7 @@ namespace diyetisyen_uygulamasi
             // email
             // 
             this.email.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.email.Location = new System.Drawing.Point(530, 124);
+            this.email.Location = new System.Drawing.Point(1070, 140);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(200, 40);
             this.email.TabIndex = 78;
@@ -116,7 +109,7 @@ namespace diyetisyen_uygulamasi
             // telno
             // 
             this.telno.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.telno.Location = new System.Drawing.Point(870, 124);
+            this.telno.Location = new System.Drawing.Point(1070, 278);
             this.telno.Name = "telno";
             this.telno.Size = new System.Drawing.Size(200, 40);
             this.telno.TabIndex = 81;
@@ -124,7 +117,7 @@ namespace diyetisyen_uygulamasi
             // tcno
             // 
             this.tcno.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tcno.Location = new System.Drawing.Point(870, 24);
+            this.tcno.Location = new System.Drawing.Point(1070, 186);
             this.tcno.Name = "tcno";
             this.tcno.Size = new System.Drawing.Size(200, 40);
             this.tcno.TabIndex = 79;
@@ -132,7 +125,7 @@ namespace diyetisyen_uygulamasi
             // soyad
             // 
             this.soyad.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.soyad.Location = new System.Drawing.Point(530, 74);
+            this.soyad.Location = new System.Drawing.Point(1070, 94);
             this.soyad.Name = "soyad";
             this.soyad.Size = new System.Drawing.Size(200, 40);
             this.soyad.TabIndex = 75;
@@ -140,7 +133,7 @@ namespace diyetisyen_uygulamasi
             // ad
             // 
             this.ad.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ad.Location = new System.Drawing.Point(530, 24);
+            this.ad.Location = new System.Drawing.Point(1070, 48);
             this.ad.Name = "ad";
             this.ad.Size = new System.Drawing.Size(200, 40);
             this.ad.TabIndex = 74;
@@ -149,7 +142,7 @@ namespace diyetisyen_uygulamasi
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(783, 82);
+            this.label6.Location = new System.Drawing.Point(997, 240);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 27);
             this.label6.TabIndex = 71;
@@ -159,7 +152,7 @@ namespace diyetisyen_uygulamasi
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(441, 132);
+            this.label5.Location = new System.Drawing.Point(992, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 27);
             this.label5.TabIndex = 70;
@@ -169,7 +162,7 @@ namespace diyetisyen_uygulamasi
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(774, 132);
+            this.label4.Location = new System.Drawing.Point(988, 286);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 27);
             this.label4.TabIndex = 69;
@@ -179,7 +172,7 @@ namespace diyetisyen_uygulamasi
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(781, 32);
+            this.label3.Location = new System.Drawing.Point(995, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 27);
             this.label3.TabIndex = 68;
@@ -189,7 +182,7 @@ namespace diyetisyen_uygulamasi
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(476, 32);
+            this.label1.Location = new System.Drawing.Point(1027, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 27);
             this.label1.TabIndex = 67;
@@ -199,7 +192,7 @@ namespace diyetisyen_uygulamasi
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(442, 82);
+            this.label2.Location = new System.Drawing.Point(993, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 27);
             this.label2.TabIndex = 66;
@@ -207,44 +200,46 @@ namespace diyetisyen_uygulamasi
             // 
             // hastalar_tablosu
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.hastalar_tablosu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.hastalar_tablosu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.hastalar_tablosu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.hastalar_tablosu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.hastalar_tablosu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
+            this.detay,
             this.Column5,
             this.Column6,
             this.Column7,
             this.Column8});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.hastalar_tablosu.DefaultCellStyle = dataGridViewCellStyle8;
-            this.hastalar_tablosu.Location = new System.Drawing.Point(12, 291);
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.hastalar_tablosu.DefaultCellStyle = dataGridViewCellStyle14;
+            this.hastalar_tablosu.Location = new System.Drawing.Point(12, 391);
             this.hastalar_tablosu.Name = "hastalar_tablosu";
             this.hastalar_tablosu.RowHeadersWidth = 51;
-            this.hastalar_tablosu.RowTemplate.Height = 24;
-            this.hastalar_tablosu.Size = new System.Drawing.Size(1058, 250);
+            this.hastalar_tablosu.RowTemplate.Height = 35;
+            this.hastalar_tablosu.Size = new System.Drawing.Size(1258, 250);
             this.hastalar_tablosu.TabIndex = 84;
             // 
             // hastalar
             // 
             this.hastalar.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hastalar.FormattingEnabled = true;
-            this.hastalar.Location = new System.Drawing.Point(12, 250);
+            this.hastalar.Location = new System.Drawing.Point(12, 350);
             this.hastalar.Name = "hastalar";
             this.hastalar.Size = new System.Drawing.Size(300, 35);
             this.hastalar.TabIndex = 85;
@@ -254,18 +249,19 @@ namespace diyetisyen_uygulamasi
             // rapor_al
             // 
             this.rapor_al.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rapor_al.Location = new System.Drawing.Point(318, 249);
+            this.rapor_al.Location = new System.Drawing.Point(318, 349);
             this.rapor_al.Name = "rapor_al";
             this.rapor_al.Size = new System.Drawing.Size(200, 36);
             this.rapor_al.TabIndex = 86;
             this.rapor_al.Text = "Rapor Al";
             this.rapor_al.UseVisualStyleBackColor = true;
+            this.rapor_al.Click += new System.EventHandler(this.rapor_al_Click);
             // 
             // hastaliklar
             // 
             this.hastaliklar.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hastaliklar.FormattingEnabled = true;
-            this.hastaliklar.Location = new System.Drawing.Point(132, 80);
+            this.hastaliklar.Location = new System.Drawing.Point(141, 80);
             this.hastaliklar.Name = "hastaliklar";
             this.hastaliklar.Size = new System.Drawing.Size(220, 36);
             this.hastaliklar.TabIndex = 87;
@@ -275,7 +271,7 @@ namespace diyetisyen_uygulamasi
             // 
             this.diyetler.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.diyetler.FormattingEnabled = true;
-            this.diyetler.Location = new System.Drawing.Point(132, 130);
+            this.diyetler.Location = new System.Drawing.Point(141, 150);
             this.diyetler.Name = "diyetler";
             this.diyetler.Size = new System.Drawing.Size(220, 36);
             this.diyetler.TabIndex = 88;
@@ -295,80 +291,16 @@ namespace diyetisyen_uygulamasi
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(12, 134);
+            this.label8.Location = new System.Drawing.Point(12, 154);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(114, 27);
             this.label8.TabIndex = 90;
             this.label8.Text = "Diyet Türü";
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ad";
-            this.Column1.HeaderText = "Ad";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "soyad";
-            this.Column2.HeaderText = "Soyad";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "hastalik";
-            this.Column3.HeaderText = "Hastalık";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "diyet_tur";
-            this.Column4.HeaderText = "Diyet";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "tcno";
-            this.Column5.HeaderText = "Tc No";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "telno";
-            this.Column6.HeaderText = "Tel No";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "email";
-            this.Column7.HeaderText = "E-Mail";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "adres";
-            this.Column8.HeaderText = "Adres";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
             // guncelle
             // 
             this.guncelle.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.guncelle.Location = new System.Drawing.Point(132, 180);
+            this.guncelle.Location = new System.Drawing.Point(141, 220);
             this.guncelle.Name = "guncelle";
             this.guncelle.Size = new System.Drawing.Size(220, 36);
             this.guncelle.TabIndex = 91;
@@ -376,12 +308,117 @@ namespace diyetisyen_uygulamasi
             this.guncelle.UseVisualStyleBackColor = true;
             this.guncelle.Click += new System.EventHandler(this.guncelle_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Location = new System.Drawing.Point(1099, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(146, 24);
+            this.label9.TabIndex = 92;
+            this.label9.Text = "Hasta Ekleme";
+            // 
+            // hasta_detay
+            // 
+            this.hasta_detay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hasta_detay.Location = new System.Drawing.Point(550, 80);
+            this.hasta_detay.Multiline = true;
+            this.hasta_detay.Name = "hasta_detay";
+            this.hasta_detay.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.hasta_detay.Size = new System.Drawing.Size(400, 200);
+            this.hasta_detay.TabIndex = 93;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(398, 84);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(146, 27);
+            this.label10.TabIndex = 94;
+            this.label10.Text = "Detay Bilgileri";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ad";
+            this.Column1.FillWeight = 99.2647F;
+            this.Column1.HeaderText = "Ad";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "soyad";
+            this.Column2.FillWeight = 99.2647F;
+            this.Column2.HeaderText = "Soyad";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "hastalik";
+            this.Column3.FillWeight = 99.2647F;
+            this.Column3.HeaderText = "Hastalık";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "diyet_tur";
+            this.Column4.FillWeight = 99.2647F;
+            this.Column4.HeaderText = "Diyet";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // detay
+            // 
+            this.detay.DataPropertyName = "detay";
+            this.detay.FillWeight = 105.8824F;
+            this.detay.HeaderText = "Detay";
+            this.detay.MinimumWidth = 6;
+            this.detay.Name = "detay";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "tcno";
+            this.Column5.FillWeight = 99.2647F;
+            this.Column5.HeaderText = "Tc No";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "telno";
+            this.Column6.FillWeight = 99.2647F;
+            this.Column6.HeaderText = "Tel No";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "email";
+            this.Column7.FillWeight = 99.2647F;
+            this.Column7.HeaderText = "E-Mail";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "adres";
+            this.Column8.FillWeight = 99.2647F;
+            this.Column8.HeaderText = "Adres";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            // 
             // diyetisyen_panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.ClientSize = new System.Drawing.Size(1282, 653);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.hasta_detay);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.guncelle);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -390,7 +427,6 @@ namespace diyetisyen_uygulamasi
             this.Controls.Add(this.rapor_al);
             this.Controls.Add(this.hastalar);
             this.Controls.Add(this.hastalar_tablosu);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.hasta_ekle);
             this.Controls.Add(this.adres);
             this.Controls.Add(this.email);
@@ -419,7 +455,6 @@ namespace diyetisyen_uygulamasi
         #endregion
 
         public System.Windows.Forms.Button geri_butonu;
-        public System.Windows.Forms.Label label11;
         public System.Windows.Forms.Button hasta_ekle;
         public System.Windows.Forms.TextBox adres;
         public System.Windows.Forms.TextBox email;
@@ -440,14 +475,18 @@ namespace diyetisyen_uygulamasi
         private System.Windows.Forms.ComboBox diyetler;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Button guncelle;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox hasta_detay;
+        public System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detay;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        public System.Windows.Forms.Button guncelle;
     }
 }
