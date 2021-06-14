@@ -18,7 +18,7 @@ namespace diyetisyen_uygulamasi
             InitializeComponent();
         }
 
-        private void login_FormClosed(object sender, FormClosedEventArgs e)
+        private void login_FormClosed(object sender, FormClosedEventArgs e). 
         {
             Application.Exit();
         }
